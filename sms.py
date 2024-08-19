@@ -25,20 +25,23 @@ sub1, sub2, sub3 = marks()
 
 if sub1 >= 40:
         print("Passed")
-        print(f"Maths marks{marks}")
+        print(f"Maths marks {sub1}")
 else:
         print("Fail in Maths")
 
 if sub2 >= 40:
         print("Passed")
-        print(f"English marks{marks}")
+        print(f"English marks {sub2}")
 else:
         print("Fail in English")
 
 if sub3 >= 40:
         print("Passed")
-        print(f"Computer Science marks{marks}")
+        print(f"Computer Science marks {sub3}")
 else:
         print("Fail in Computer Science")
+
+# total_marks = "result is ".join(available_subjects)
+# print(f"Total marks: {sub1, sub2 , sub3}")
 
 
