@@ -3,10 +3,7 @@
 
 # _private_variable = 42
 
-# class MyClass:
-#     def __init__(self):
-#         self._private_instance_variable = "private"
-#         print()
+
 
 # text = "123"
 # is_decimal = text.isdecimal()
