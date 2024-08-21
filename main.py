@@ -17,11 +17,12 @@
 # age = 23
 
 
-name: list[str] = ["muneeb", "ahmed", "ali"]
-print(name.index("muneeb"))
-print(id(list))
-popped_value = name.pop()
-print(id(popped_value))
-print(name, popped_value)
+# name: list[str] = ["muneeb", "ahmed", "ali"]
+# print(name.index("muneeb"))
+# print(id(list))
+# popped_value = name.pop()
+# print(id(popped_value))
+# print(name, popped_value)
 
-
+name:str = "ada lovelace"
+print(name.title())
