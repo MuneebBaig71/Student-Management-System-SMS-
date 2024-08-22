@@ -8,12 +8,17 @@ def subjects():
     sub1 = "maths"
     sub2 = "english"
     sub3 = "computer science"
-    return  sub1, sub2, sub3
+    return sub1, sub2, sub3
 
 
 def marks():
-    sub1, sub2, sub3 = map(int, input("Enter your marks for all three subjects: ").split())
-    return sub1, sub2, sub3
+    while True:
+        sub1, sub2, sub3 = map(int, input("Enter your marks for all three subjects: ").split())
+        if all(0 <= mark <= 100 for mark in [sub1, sub2, sub3]):
+                return sub1, sub2, sub3
+        else:
+                print("Please enter valid marks (0-100)")
+    
     
 available_subjects = subjects()
 print("Available subjects are: " ,",".join(available_subjects))
