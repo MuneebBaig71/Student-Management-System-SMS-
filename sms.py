@@ -23,30 +23,38 @@ def marks():
 available_subjects = subjects()
 print("Available subjects are: " ,",".join(available_subjects))
 
+again = "y"
+while again.lower() == "y":
+       
+        sub1, sub2, sub3 = marks()
 
+        if sub1 >= 40:
+                print("Passed")
+                print(f"Maths marks {sub1}")
+        else:
+                print("Fail in Maths")
 
-sub1, sub2, sub3 = marks()
+        if sub2 >= 40:
+                print("Passed")
+                print(f"English marks {sub2}")
+        else:
+                print("Fail in English")
 
+        if sub3 >= 40:
+                print("Passed")
+                print(f"Computer Science marks {sub3}")
+        else:
+                print("Fail in Computer Science")
 
-if sub1 >= 40:
-        print("Passed")
-        print(f"Maths marks {sub1}")
-else:
-        print("Fail in Maths")
+        again = input("Would you like to enter again? (y/n): ")
 
-if sub2 >= 40:
-        print("Passed")
-        print(f"English marks {sub2}")
-else:
-        print("Fail in English")
+        if again == "n":
+                break
 
-if sub3 >= 40:
-        print("Passed")
-        print(f"Computer Science marks {sub3}")
-else:
-        print("Fail in Computer Science")
-
-# total_marks = "result is ".join(available_subjects)
-# print(f"Total marks: {sub1, sub2 , sub3}")
+        
+total_marks = "result is ".join(available_subjects)
+print(f"Total marks: {sub1 + sub2 + sub3}")
+percentage = (sub1 + sub2 + sub3) / 300 * 100
+print(f"Percentage: {percentage:.2f}%")
 
 
