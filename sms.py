@@ -1,17 +1,20 @@
+import pandas as pd
 print("Welcome to the student management system")
 
-name = input("Enter your name: ")
-Roll_no = input("Enter your Roll no: ")
+name:str = input("Enter your name: ")
+Roll_no:str = input("Enter your Roll no: ")
 
-def subjects():
-    print("Enter your subjects")
+print(f"Hi {name}, your Roll no is {Roll_no}")
+
+def subjects()->tuple[str,str,str]:
     sub1 = "maths"
     sub2 = "english"
     sub3 = "computer science"
     return sub1, sub2, sub3
 
+results:list = []
 
-def marks():
+def marks()->tuple[int,int,int]:
     while True:
         sub1, sub2, sub3 = map(int, input("Enter your marks for all three subjects: ").split())
         if all(0 <= mark <= 100 for mark in [sub1, sub2, sub3]):
@@ -20,7 +23,7 @@ def marks():
                 print("Please enter valid marks (0-100)")
     
     
-available_subjects = subjects()
+available_subjects:tuple[str,str,str] = subjects()
 print("Available subjects are: " ,",".join(available_subjects))
 
 again = "y"
@@ -46,15 +49,33 @@ while again.lower() == "y":
         else:
                 print("Fail in Computer Science")
 
+        print(f"Total marks: {sub1 + sub2 + sub3}")
+        percentage = (sub1 + sub2 + sub3) / 300 * 100
+        print(f"Percentage: {percentage:.2f}%")
         again = input("Would you like to enter again? (y/n): ")
 
+        
         if again == "n":
                 break
+        results.append({
+        'Subject': available_subjects,
+        'Marks': [sub1, sub2, sub3]
+        })
+all_subjects = []
+all_marks = []
+for result in results:
+    all_subjects.extend(result['Subject'])
+    all_marks.extend(result['Marks'])
 
-        
-total_marks = "result is ".join(available_subjects)
-print(f"Total marks: {sub1 + sub2 + sub3}")
-percentage = (sub1 + sub2 + sub3) / 300 * 100
-print(f"Percentage: {percentage:.2f}%")
+df = pd.DataFrame({
+    'Subject': all_subjects,
+    'Marks': all_marks
+})
+
+try:
+    df.to_excel('results.xlsx', index=False)
+    print("Results have been saved to 'results.xlsx'.")
+except Exception as e:
+    print(f"An error occurred while saving the file: {e}")
 
 
