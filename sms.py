@@ -10,6 +10,12 @@ def subjects():
     sub3 = "computer science"
     return sub1, sub2, sub3
 
+roll_numbers:list =[]
+roll_numbers.append(Roll_no)
+names:list =[]
+names.append(name)
+
+print("Hi " + names[0])
 
 def marks():
     while True:
@@ -51,7 +57,7 @@ while again.lower() == "y":
         if again == "n":
                 break
 
-        
+print(names,roll_numbers)        
 total_marks = "result is ".join(available_subjects)
 print(f"Total marks: {sub1 + sub2 + sub3}")
 percentage = (sub1 + sub2 + sub3) / 300 * 100
