@@ -12,16 +12,7 @@ def subjects()->tuple[str,str,str]:
     sub3 = "computer science"
     return sub1, sub2, sub3
 
-<<<<<<< HEAD
-roll_numbers:list =[]
-roll_numbers.append(Roll_no)
-names:list =[]
-names.append(name)
-
-print("Hi " + names[0])
-=======
 results:list = []
->>>>>>> f2eea08f2bd415e993346aa5715834d6bcdaf272
 
 def marks()->tuple[int,int,int]:
     while True:
@@ -61,38 +52,45 @@ while again.lower() == "y":
         print(f"Total marks: {sub1 + sub2 + sub3}")
         percentage = (sub1 + sub2 + sub3) / 300 * 100
         print(f"Percentage: {percentage:.2f}%")
-        again = input("Would you like to enter again? (y/n): ")
 
         
-        if again == "n":
-                break
         results.append({
         'Subject': available_subjects,
-        'Marks': [sub1, sub2, sub3]
-        })
+        'Marks': [sub1, sub2, sub3],
+        'Names': [name]* len(available_subjects)
+         })
+
+        again = input("Would you like to enter again? (y/n): ")
+        if again.lower() == "n":
+                break
 all_subjects = []
 all_marks = []
+all_names = []
+
 for result in results:
     all_subjects.extend(result['Subject'])
     all_marks.extend(result['Marks'])
+    all_names.extend(result['Names'])
+    
 
-<<<<<<< HEAD
-print(names,roll_numbers)        
-total_marks = "result is ".join(available_subjects)
-print(f"Total marks: {sub1 + sub2 + sub3}")
-percentage = (sub1 + sub2 + sub3) / 300 * 100
-print(f"Percentage: {percentage:.2f}%")
-=======
-df = pd.DataFrame({
-    'Subject': all_subjects,
-    'Marks': all_marks
-})
+if len(all_names) == len(all_subjects) == len(all_marks):
+    df = pd.DataFrame({
+        'Names': all_names,
+        'Subject': all_subjects,
+        'Marks': all_marks
+    })
 
-try:
-    df.to_excel('results.xlsx', index=False)
-    print("Results have been saved to 'results.xlsx'.")
-except Exception as e:
-    print(f"An error occurred while saving the file: {e}")
->>>>>>> f2eea08f2bd415e993346aa5715834d6bcdaf272
+    try:
+        df.to_excel('results.xlsx', index=False)
+        print("Results have been saved to 'results.xlsx'.")
+    except Exception as e:
+        print(f"An error occurred while saving the file: {e}")
+else:
+    print("Error: All arrays must be of the same length. Please check your data.")
+    df = None  # Ensure df is defined even if not used
 
+# Ensure df exists before trying to use it
+if df is not None:
+    # (Optional) Further processing with df can go here
+    pass
 
