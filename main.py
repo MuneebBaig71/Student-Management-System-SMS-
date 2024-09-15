@@ -82,11 +82,12 @@
 
 # main(students)
 
-def students(**names ):
+def students(*subjects, **names):
     print("Student details: ")
+    print(f"Subjects: {','.join(subjects)}")
     for key, value in names.items():
         print(f" {key} : {value}")
         
 
 
-students(name="muneeb",age=23 , Roll_no=123)
+students("english", "maths", "science",name="muneeb",age=23 , Roll_no=123)
