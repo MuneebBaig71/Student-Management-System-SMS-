@@ -82,12 +82,52 @@
 
 # main(students)
 
-def students(*subjects, **names):
-    print("Student details: ")
-    print(f"Subjects: {','.join(subjects)}")
-    for key, value in names.items():
-        print(f" {key} : {value}")
+# def students(*subjects, **names):
+#     print("Student details: ")
+#     print(f"Subjects: {','.join(subjects)}")
+#     for key, value in names.items():
+#         print(f" {key} : {value}")
         
 
 
-students("english", "maths", "science",name="muneeb",age=23 , Roll_no=123)
+# students("english", "maths", "science",name="muneeb",age=23 , Roll_no=123)
+
+# import csv
+
+# def save_expense(expense, filename="expenses.csv"):
+#     """Append a single expense to the CSV file."""
+#     with open(filename, mode="a", newline='') as f:
+#         writer = csv.writer(f)
+#         writer.writerow([expense['date'], expense['category'], expense['amount'], expense.get('description', '')])
+
+# def add_expense():
+#     """Get user input and save it as an expense."""
+#     date = input("Enter the date (YYYY-MM-DD): ")
+#     category = input("Enter the category (e.g., food, transport): ")
+#     amount = float(input("Enter the amount: "))
+#     description = input("Enter a description (optional): ")
+
+#     # Create an expense dictionary
+#     expense = {
+#         "date": date,
+#         "category": category,
+#         "amount": amount,
+#         "description": description
+#     }
+
+#     # Save the expense to a CSV file
+#     save_expense(expense)
+
+# # Sample usage
+# add_expense()
+
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def info(self):
+        print(f"my name is {self.name} and my age is {self.age}")
+
+new_person = Student("Muneeb", 21)
+new_person.info()
+print(new_person.name, new_person.age)
