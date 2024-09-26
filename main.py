@@ -121,13 +121,89 @@
 # # Sample usage
 # add_expense()
 
-class Student:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-    def info(self):
-        print(f"my name is {self.name} and my age is {self.age}")
+# class Student:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#     def info(self):
+#         print(f"my name is {self.name} and my age is {self.age}")
 
-new_person = Student("Muneeb", 21)
-new_person.info()
-print(new_person.name, new_person.age)
+# # new_person = Student("Muneeb", 21)
+# # new_person.info()
+# # print(new_person.name, new_person.age)
+
+# class Detail(Student):
+#     def __init__(self, name, age, roll_number):
+#         super().__init__(name, age)
+#         self.roll_number = roll_number
+
+#     def status(self):
+#         print(f"your name is {self.name} and roll number is {self.roll_number}")
+        
+# # new = Admin("ali",23,123)
+# # new.status()
+
+# class Notification:
+#     def send_notification(self, message):
+#         print(f"Sending notification: {message}")
+
+# class Admin(Detail, Notification):
+#     def __init__(self, name, age , roll_number, username, email, access_level):
+#         super().__init__(name, age, roll_number)
+#         self.access_level = access_level
+#         self.username = username
+#         self.email = email
+
+#     def send_admin_notification(self):
+#         self.send_notification(f"Admin {self.username} has logged in.")
+
+# new = Admin("muneeb",21,123, "muneeb123", "n9HJW@example.com", "admin")
+# new.send_admin_notification()
+
+# class User:
+#     def __init__(self, username, email):
+#         self.username = username
+#         self.email = email
+
+#     def display_user_info(self):
+#         print(f"User: {self.username}, Email: {self.email}")
+# class Customer(User):
+#     def display_user_info(self):
+#         print(f"Customer: {self.username}, Email: {self.email}")
+
+# new = Customer("muneeb", "n9HJW@example.com")
+# new.display_user_info()
+
+# class TopLevel:
+#     top_class_var = 100
+#     def __init__(self):
+#         self.top_var = 101
+
+#     def top_method(self):
+#         return 102
+
+
+# class MidLevel(TopLevel):
+#     mid_class_var = 200
+#     def __init__(self):
+#         super().__init__()
+#         self.mid_var = 201
+    
+#     def mid_method(self):
+#         return 202
+
+
+# class LowerLevel(MidLevel):
+#     lower_class_var = 300
+#     def __init__(self):
+#         super().__init__()
+#         self.lower_var = 301
+
+#     def lower_method(self):
+#         return 302
+
+
+# obj = LowerLevel()
+
+# print(isinstance(obj, TopLevel))
+# print(issubclass(TopLevel, LowerLevel))
